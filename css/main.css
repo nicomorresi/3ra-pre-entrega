@@ -73,6 +73,17 @@ footer{
     align-items: center;
 }
 
+.main-home img{
+    width: 500px;
+    margin-top: 15px;
+}
+
+.main-home ul{
+    text-align: center;
+}
+
+
+
 /* estilos de contacto */
 
 .main-contacto{
@@ -119,9 +130,12 @@ footer{
 
 /* mq */
 @media screen and (min-width: 768px){
-   header{
-    justify-content: space-around;
-   }
+    header{
+        justify-content:space-around ;
+    }
+    body{
+        background-color:blueviolet;
+    }
 }
 
 main .main-servicios{
@@ -135,3 +149,4 @@ main .main-servicios{
 main .main-servicios div img{
     width: 65px;
 }
+
