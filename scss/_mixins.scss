@@ -1,0 +1,15 @@
+// _mixins.scss
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-direction-column {
+    flex-direction: column;
+}
+
+@mixin background-color($color) {
+    background-color: $color;
+}

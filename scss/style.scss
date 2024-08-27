@@ -1,5 +1,148 @@
-//import
-@import "base/reset";
-@import "base/home"
+// styles.scss
 
+@import "variables";
+@import "mixins";
 
+/* Estilos Generales */
+body {
+  background-color: $color-background-light;
+}
+
+header {
+  @include flex-center;
+  text-align: center;
+
+  nav {
+    text-align: center;
+
+    ul {
+      @include flex-center;
+      gap: $gap-small;
+
+      li {
+        list-style: none;
+
+        a {
+          text-decoration: none;
+          color: tomato;
+        }
+      }
+    }
+  }
+}
+
+.header-home,
+.header-ubicacion,
+.header-servicios,
+.header-contacto,
+.header-horarios {
+  @include background-color($color-background-dark);
+}
+
+/* Estilos de Home */
+main {
+  color: $color-text-light;
+  margin-top: 50px;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Estilos de Footer */
+footer {
+  text-align: center;
+  color: $color-text-light;
+  margin-top: 50px;
+  @include background-color($color-background-dark);
+}
+
+/* Estilos de Home */
+.main-home {
+  color: $color-text-light;
+  margin-top: $margin-top-small;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: $img-width-large;
+    margin-top: 15px;
+  }
+
+  ul {
+    text-align: center;
+  }
+}
+
+/* Estilos de Contacto */
+.main-contacto {
+  @include background-color($color-secondary);
+  padding: 10px;
+  margin-top: $margin-top-large;
+}
+
+/* Estilos de Servicios */
+.main-servicios {
+  color: $color-primary;
+  margin-top: $margin-top-medium;
+  display: flex;
+  flex-direction: column;
+  gap: $gap-large;
+  font-size: $font-size-large;
+
+  img {
+    width: $img-width-small;
+    margin-top: 15px;
+  }
+
+  ul {
+    color: $color-text-light;
+    text-align: center;
+    font-size: $font-size-medium;
+    text-decoration: underline;
+  }
+}
+
+/* Estilos de Ubicación */
+.main-ubicacion {
+  color: $color-primary;
+}
+
+/* Estilos de Horarios */
+.main-horarios {
+  color: $color-primary;
+  margin-top: $margin-top-large;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  header {
+    justify-content: space-around;
+  }
+
+  body {
+    background-color: gray;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    justify-content: center;
+  }
+
+  body {
+    background-color: $color-background-dark;
+  }
+
+  .main-servicios {
+    flex-direction: column;
+  }
+
+  .header-home,
+  .header-contacto,
+  .header-servicios,
+  .header-ubicacion,
+  .header-horarios {
+    @include flex-center;
+    @include flex-direction-column;
+  }
+}
